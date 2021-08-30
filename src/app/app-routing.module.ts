@@ -22,7 +22,7 @@ import { ComposerDetailsComponent } from './composer-details/composer-details.co
 const routes: Routes = [
   {
     path: '',
-    component: ComposerListComponent
+    redirectTo: '/composer-list', pathMatch: 'full' 
   },
   {
     path: 'composer-list',
@@ -39,13 +39,13 @@ const routes: Routes = [
   {
     path: 'composer-details/:composerId',
     component: ComposerDetailsComponent
-  }
+  },
 
 ];
 
 /* Import Angular's routing module for the root of the application, and export as the router module of this application */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
